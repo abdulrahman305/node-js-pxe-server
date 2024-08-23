@@ -21,6 +21,5 @@
   }
 }
 {
-  ...,
   "publishConfig": {"registry": "https://packages.buildkite.com/sauditech/node/npm/"}
 }
