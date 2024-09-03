@@ -9,7 +9,7 @@ env:
     AZURE_CONTAINER_REGISTRY: acrworkflow1722973530004
     CLUSTER_NAME: kube
     CLUSTER_RESOURCE_GROUP: kubeops_group
-    CONTAINER_NAME: image-workflow-1725372539768
+    CONTAINER_NAME: image-workflow-1725373058117
     DEPLOYMENT_MANIFEST_PATH: |
         manifests/deployment.yaml
         manifests/service.yaml
@@ -62,4 +62,4 @@ jobs:
                 action: deploy
                 images: ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }}
                 manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
-                namespace: tekton-pipelines-resolvers
+                namespace: kube-node-lease
