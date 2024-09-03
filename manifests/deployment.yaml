@@ -5,7 +5,7 @@ metadata:
   labels:
     app: pxe
     kubernetes.azure.com/generator: devhub
-  namespace: namespace-workflow-1725372106495
+  namespace: tekton-pipelines-resolvers
 spec:
   replicas: 1
   selector:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: pxe
-          image: acrworkflow1725372106495.azurecr.io/image-workflow-1725372106495:latest
+          image: acrworkflow1722973530004.azurecr.io/image-workflow-1725372539768:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
