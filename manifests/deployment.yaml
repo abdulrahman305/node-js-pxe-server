@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pxe
+  labels:
+    app: pxe
+    kubernetes.azure.com/generator: devhub
+  namespace: k8sgpt-operator-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pxe
+  template:
+    metadata:
+      labels:
+        app: pxe
+    spec:
+      containers:
+        - name: pxe
+          image: acrworkflow1722973530004.azurecr.io/pxe:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
